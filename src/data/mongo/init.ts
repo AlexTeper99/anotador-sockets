@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 interface ConnectionOptions {
   mongoUrl: string;
@@ -14,9 +14,9 @@ export class MongoDatabase {
         dbName: dbName,
       });
 
-      console.log("Mongo connected!");
+      console.log('Mongo connected!');
     } catch (error) {
-      console.log("Mongo connection error");
+      console.log('Mongo connection error');
       throw error;
     }
   }

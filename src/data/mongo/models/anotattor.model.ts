@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document } from 'mongoose';
 
 interface Item {
   name: string;
@@ -31,6 +31,6 @@ const anottatorSchema: Schema = new Schema<Anottator>({
   ],
 });
 
-const AnottatorModel = mongoose.model<Anottator>("Anottator", anottatorSchema);
+const AnottatorModel = mongoose.model<Anottator>('Anottator', anottatorSchema);
 
 export default AnottatorModel;
