@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { AnotattorController } from './controller';
+import { AnotattorMiddleware } from '../../middlewares';
 
 export class AnotattorRoutes {
   static get routes(): Router {
@@ -7,7 +8,7 @@ export class AnotattorRoutes {
 
     const anotattorController = new AnotattorController();
 
-    router.get('/', anotattorController.getAll);
+    router.get('/', AnotattorMiddleware.validateAnotattor, anotattorController.getAll);
 
     return router;
   }
