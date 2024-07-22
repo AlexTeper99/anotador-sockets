@@ -3,6 +3,7 @@ export * from './errors/custom.error';
 export * from './errors/handleRest.error';
 
 // DTO
+export * from './dto/annotators/get-annotator.dto';
 
 // entities
 export * from './entities/annotator.entity';

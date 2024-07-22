@@ -1,5 +1,5 @@
-import { AnnotatorEntity } from '..';
+import { AnnotatorEntity, GetAnnotatorDTO } from '..';
 
 export abstract class AnnotatorRepository {
-  abstract findById(id: string): Promise<AnnotatorEntity>;
+  abstract findById(getAnnotatorDto: GetAnnotatorDTO): Promise<AnnotatorEntity>;
 }
