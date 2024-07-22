@@ -11,7 +11,14 @@ export class AnotattorRoutes {
     const annotatorRepository = new AnnotatorRepositoryImpl(datasource);
     const anotattorController = new AnnotatorController(annotatorRepository);
 
-    router.get('/', AnnotatorMiddleware.validateAnotattor, anotattorController.getAnnotatorById);
+    // TODO: Ask Guille better aproach
+    router.get('/', anotattorController.getAnnotatorById);
+
+    router.get(
+      '/validate',
+      AnnotatorMiddleware.validateAnotattor,
+      anotattorController.getAnnotatorById
+    );
 
     return router;
   }
