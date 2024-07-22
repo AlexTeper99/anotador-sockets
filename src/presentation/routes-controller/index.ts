@@ -1,2 +1,2 @@
-export * from './anotattor/controller';
-export * from './anotattor/routes';
+export * from './annotator/controller';
+export * from './annotator/routes';

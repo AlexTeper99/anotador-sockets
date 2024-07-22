@@ -1,1 +1,1 @@
-export * from './Anotattor.middleware';
+export * from './Annotator.middleware';

@@ -1,20 +1,16 @@
 import mongoose, { Schema, Document } from 'mongoose';
+import { ID_REGEX, Item } from '../../../domain';
 
-interface Item {
-  name: string;
-  quantity: number;
-}
-
-interface Anottator extends Document {
+interface Annotator extends Document {
   id: string;
   items: Item[];
 }
 
-const anottatorSchema: Schema = new Schema<Anottator>({
+const annotatorSchema: Schema = new Schema<Annotator>({
   id: {
     type: String,
     required: true,
-    match: /^[0-9]{3}[a-zA-Z]{3}$/,
+    match: ID_REGEX,
   },
   items: [
     {
@@ -31,6 +27,4 @@ const anottatorSchema: Schema = new Schema<Anottator>({
   ],
 });
 
-const AnottatorModel = mongoose.model<Anottator>('Anottator', anottatorSchema);
-
-export default AnottatorModel;
+export const AnnotatorModel = mongoose.model<Annotator>('Anottator', annotatorSchema);
